@@ -53,6 +53,13 @@ const upload = multer({
 });
 
 // ==========================================================================
+// Express API Endpoint: Health Check
+// ==========================================================================
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok', message: 'Backend service is online' });
+});
+
+// ==========================================================================
 // Express API Endpoint: Analyze Resume
 // ==========================================================================
 app.post('/api/analyze', upload.single('file'), async (req, res) => {
